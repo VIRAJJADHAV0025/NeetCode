@@ -1,14 +1,16 @@
 class Solution {
     public boolean hasDuplicate(int[] nums) {
-        // Create a hashset to store integers
+        // Create a HashSet to track numbers we have already seen
         Set<Integer> intSet = new HashSet();
         for(int num : nums) {
+            // If number already exists in set, duplicate found
             if(intSet.contains(num)) {
                 return true;
             }
-            // Add num to hashset
+            // Number not seen yet — add it to the set
             intSet.add(num);
         }
+        // No duplicate found after checking all numbers
         return false;
     }
 }
